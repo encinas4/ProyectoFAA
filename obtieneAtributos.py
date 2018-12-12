@@ -122,6 +122,73 @@ def cortarLineasHorizontal(letra, division):
 
     return totalLineas
 
+#def obtenerAtributoAnchoAlto(self, letra):
+    #letraRecortada = recortarLetra(letra)
+
+    #ancho = 
+    #alto = 
+
+    #atibutoAncho = Atributo(ancho, "Ancho", "Continuo")
+    #atibutoAlto = Atributo(alto, "Alto", "Continuo")
+
+    #return atributoAncho, atributoAlto
+
+#def obtenerAtributoCortesVerticales(self, letra, division):
+#    lineas = cortarLineasVertical(letra, division)
+#
+#    atributo = Atributo(lineas, "LineasVerticales", "Continuo")
+#
+#    return atributo
+
+def obtenerAtributoCortesHorizontales(self, letra, division):
+    lineas = cortarLineasHorizontal(letra, division)
+
+    atributo = Atributo(lineas, "LineasHorizontales", "Continuo")
+
+    return atributo
+
+def generarFicheroDatos(self, fichero, datos):
+
+    f = fopen('conjuntoDatos\''+fichero+'.data', 'w')
+    
+    #Imprimimos el numero de datos
+    f.write((len(datos)+1))
+
+    #imprimimos una linea con el nombre de los atributos
+    for dato in datos:
+        for atributo in dato.listaAtributos:
+            f.write(atributo.nombreAtributo)
+
+    #imprimimos una linea con el tipo de los atributos
+    for dato in datos:
+        for atributo in dato.listaAtributos:
+            f.write(atributo.tipoAtributo)
+
+    #imprimimos todos los atributos 1 por linea
+
+    for dato in datos:
+        for atributo in dato.listaAtributos:
+            f.write(atributo.valorAtributo)
+        f.write('\n')
+    
+    f.close()
+
+
+def generarDato(self, atributos, clase):
+
+    dato = Dato(clase)
+
+    for atributo in atributos:
+        dato.añadirAtributoAlDato(atributo)
+
+    return Dato
+
+##Nota, luego en el main del jupyter, con todas las celdas, las reccoremos y una a una le aplicamos un atributo u otro y llamamos a generar dato (para cada celda)
+## y cuando acabemos, llamamos a generarFicheroDatos y asi estaria (o esa es mi idea)
+
+
+
+
 
 
 
