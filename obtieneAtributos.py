@@ -13,24 +13,6 @@ class Atributo:
        self.nombreAtributo = nombreAtributo
        self.tipoAtributo = tipoAtributo
 
-    def getValorAtributo(self):
-        return self.valorAtributo
-    
-    def getNombreAtributo(self):
-        return self.nombreAtributo
-
-    def getTipoAtributo(self):
-        return self.tipoAtributo
-
-    def setValorAtributo(self, valorAtributo):
-        self.valorAtributo = valorAtributo
-    
-    def setNombreAtributo(self, nombreAtributo):
-        self.nombreAtributo = nombreAtributo
-
-    def setTipoAtributo(self, tipoAtributo):
-        self.tipoAtributo = tipoAtributo
-
 ###Clase que es un dato (letra) que se compone de la clase (letra en este caso) y una lista de atributos
 class Dato:
     clase = None            #la clase sera un atributo propio con su valor, su tipo y como nombre será clase o numero
@@ -125,8 +107,8 @@ def cortarLineasHorizontal(letra, division):
 #def obtenerAtributoAnchoAlto(self, letra):
     #letraRecortada = recortarLetra(letra)
 
-    #ancho = 
-    #alto = 
+    #ancho = como calculamos el ancho de la imagen¿?¿?
+    #alto = como calculamos el alto de la imagne¿??
 
     #atibutoAncho = Atributo(ancho, "Ancho", "Continuo")
     #atibutoAlto = Atributo(alto, "Alto", "Continuo")
@@ -154,18 +136,17 @@ def generarFicheroDatos(self, fichero, datos):
     #Imprimimos el numero de datos
     f.write((len(datos)+1))
 
-    #imprimimos una linea con el nombre de los atributos
+    #imprimimos una linea con el nombre de los atributos, tengo dudas de que esto se imprima como una unica linea o en varias lineas
     for dato in datos:
         for atributo in dato.listaAtributos:
             f.write(atributo.nombreAtributo)
 
-    #imprimimos una linea con el tipo de los atributos
+    #imprimimos una linea con el tipo de los atributos, tengo dudas de que esto se imprima en una linea o en varias lienas
     for dato in datos:
         for atributo in dato.listaAtributos:
             f.write(atributo.tipoAtributo)
 
-    #imprimimos todos los atributos 1 por linea
-
+    #imprimimos todos los atributos 1 por linea, tengo duas de que esto se imprima bien asi
     for dato in datos:
         for atributo in dato.listaAtributos:
             f.write(atributo.valorAtributo)
@@ -185,20 +166,3 @@ def generarDato(self, atributos, clase):
 
 ##Nota, luego en el main del jupyter, con todas las celdas, las reccoremos y una a una le aplicamos un atributo u otro y llamamos a generar dato (para cada celda)
 ## y cuando acabemos, llamamos a generarFicheroDatos y asi estaria (o esa es mi idea)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
