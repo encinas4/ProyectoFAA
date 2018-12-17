@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
-%matplotlib inline
+#%matplotlib inline
 
 def minimos(valores, umbral=0.3):
     """ A partir de un vector de valores y un umbral busca 
@@ -77,9 +77,10 @@ def extrae_cuadradito(imagen, corte_h, corte_v, alto, ancho):
 def test():
     imagen = mpimg.imread('out-0032.png', True)
     h, v = detectar_lineas(imagen)
-    plt.imshow(extrae_cuadradito(imagen,h[np.random.randint(2,13)],v[np.random.randint(2,11)],210,150),cmap='gray')
+    aux = extrae_cuadradito(imagen,h[np.random.randint(2,13)],v[np.random.randint(2,11)],210,150)
+    print(aux)
+    plt.imshow(aux,cmap='gray')
     
-
 def extrae_celdas(nombres_imagenes, alto, ancho):
     """ A partir de una lista de imágenes extrae las celdas
         todas con un mismo alto y ancho
@@ -121,7 +122,7 @@ def parametros_por_defecto():
     """
     import glob
     
-    nombres_imagenes = glob.glob('*png')
+    nombres_imagenes = glob.glob('datos/*png')
     alto             = 206
     ancho            = 150
     clases           = 'ABCDEFGHIJ'
