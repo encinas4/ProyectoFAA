@@ -1,4 +1,4 @@
-from clasificadores import clasificaNaiveBayes, clasificaKNN, clasificaRegresionLogistica, clasificaRandomForest
+from clasificadores import clasificaNaiveBayes, clasificaKNN, clasificaRegresionLogistica, clasificaRandomForest, clasificaRedNeuronal, clasificaArbolDecision
 from generarDatos import generacionDatos
 from letrita import guardaLetritas, recortarLetritas
 from generarCeldas import extrae_celdas, parametros_por_defecto
@@ -27,12 +27,18 @@ def main():
     #5. clasificamos
     print("Media de aciertos de Naive Bayes")
     print(clasificaNaiveBayes(datos, divisionVC))
-    print("Media de aciertos de KNN con k = 3")
-    print(clasificaKNN(datos, 15, divisionVC))
-    print("Media de aciertos de Regresión Logística con nEpocas = 100")
-    print(clasificaRegresionLogistica(datos, 100, divisionVC))
+    print("Media de aciertos de KNN con k = 5")
+    print(clasificaKNN(datos, 5, divisionVC))
+    print("Media de aciertos de Regresión Logística con nEpocas = 1000")
+    print(clasificaRegresionLogistica(datos, 750, divisionVC))
     print("Media de aciertos de RandomForest")
-    print(clasificaRandomForest(datos, 200, 2, divisionVC))
+    print(clasificaRandomForest(datos, 500, 2, 1,divisionVC))
+    print("Media de aciertos de Red Neuronal")
+    print(clasificaRedNeuronal(datos, 750, divisionVC))
+    print("Media de aciertos de Arbol de decision")
+    print(clasificaArbolDecision(datos, divisionVC))
+    #print("Media de aciertos de Red Neuronal")
+    #print(clasificaRedNeuronalNuevo(datos, 750, divisionVC))
 
 
 if __name__ == '__main__':
