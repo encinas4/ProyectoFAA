@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 class Letrita:
     celda = None
@@ -54,3 +55,25 @@ def recortarLetritas(letritas):
         letritasRecortadas = np.append(letritasRecortadas, letritaRecortada)
 
     return letritasRecortadas
+
+def test_letritas(self, celdas, clases):
+    letritas = guardaLetritas(celdas, clases)
+    print("Ejemplo de letritas guardadas")
+    plt.figure(figsize=(10,10))
+    for i,iimg in enumerate(np.random.randint(0, len(letritas),size=100)):
+        plt.subplot(10,10,i+1)
+        plt.imshow(letritas[iimg].celda)
+
+    letritasRecortadas = np.array(())
+    for letrita in letritas:
+        celdaRecortada = recortarCelda(letrita.celda)
+        letritaRecortada = Letrita(letrita.clase, letrita.letra, celdaRecortada)
+        letritasRecortadas = np.append(letritasRecortadas, letritaRecortada)
+    
+    print("Ejemplo de letritas recortadas")
+    plt.figure(figsize=(10,10))
+    for i,iimg in enumerate(np.random.randint(0, len(letritasRecortadas),size=100)):
+        plt.subplot(10,10,i+1)
+        plt.imshow(letritasRecortadas[iimg].celda)
+
+

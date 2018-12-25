@@ -53,7 +53,7 @@ def contarLineasHorizontal(celda, division):
 
     return totalLineas
 
-def generacionDatos(letritas, letritasRecortadas, listaAtributos, numDivisionesH = 0, numDivisionesV = 0,splits = 0):
+def generacionDatos(letritas, letritasRecortadas, listaAtributos, numDivisionesH=0, numDivisionesV=0, splits=0):
 
     numAtributos = 1
     
@@ -71,8 +71,11 @@ def generacionDatos(letritas, letritasRecortadas, listaAtributos, numDivisionesH
     datos = np.zeros((len(letritasRecortadas), (splits**2)+numDivisionesH+numDivisionesV+numAtributos))
     i=0
     for letrita, letritaRecortada in zip(letritas, letritasRecortadas):
-        x = letrita.celda.shape[1]//splits
-        y = letrita.celda.shape[0]//splits
+        
+        if splits!= 0:
+            x = letrita.celda.shape[1]//splits
+            y = letrita.celda.shape[0]//splits
+        
         j = 0
         
         if listaAtributos[0] == True:                               #Atributo Alto
@@ -112,3 +115,9 @@ def generacionDatos(letritas, letritasRecortadas, listaAtributos, numDivisionesH
         i+=1
 
     return datos
+
+def test_datos(self, letritas, letritasRecortadas):
+    datos = datos = generacionDatos(letritas, letritasRecortadas, [True, True, True, True, True, True, True], 5, 5, 3)
+
+    print("Matriz de datos obtenida: ")
+    print(datos)
