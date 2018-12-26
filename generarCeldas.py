@@ -73,13 +73,6 @@ def extrae_cuadradito(imagen, corte_h, corte_v, alto, ancho):
     assert v1-v0+1==ancho, "H:{}-V:{}-C{}".format(corte_h, corte_v,[v0,v1])
     
     return imagen[h0:h1+1, v0:v1+1]
-
-def test_imagen():
-    imagen = mpimg.imread('out-0032.png', True)
-    h, v = detectar_lineas(imagen)
-    aux = extrae_cuadradito(imagen,h[np.random.randint(2,13)],v[np.random.randint(2,11)],210,150)
-    print(aux)
-    plt.imshow(aux,cmap='gray')
     
 def extrae_celdas(nombres_imagenes, alto, ancho):
     """ A partir de una lista de imágenes extrae las celdas
@@ -128,21 +121,4 @@ def parametros_por_defecto():
     clases           = 'ABCDEFGHIJ'
     
     return nombres_imagenes, alto, ancho, clases
- 
-def test_celdas(get_params=parametros_por_defecto):
-    """ Recorre todas las imágenes, extrae las celdas y guarda
-        el resultado en ficheros de imagen individuales
-    """
-    
-    nombres_imagenes, \
-    alto,             \
-    ancho,            \
-    clases           = get_params()
-    
-    celdas = extrae_celdas(nombres_imagenes, alto, ancho)
-    
-    guarda_celdas(celdas, clases, 'out')
-
-    mostrar_imagenes(celdas[:110])
         
-    return np.array(celdas)

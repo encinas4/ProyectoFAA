@@ -116,8 +116,3 @@ def generacionDatos(letritas, letritasRecortadas, listaAtributos, numDivisionesH
 
     return datos
 
-def test_datos(self, letritas, letritasRecortadas):
-    datos = datos = generacionDatos(letritas, letritasRecortadas, [True, True, True, True, True, True, True], 5, 5, 3)
-
-    print("Matriz de datos obtenida: ")
-    print(datos)

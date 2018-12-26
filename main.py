@@ -22,7 +22,7 @@ def main():
     letritasRecortadas = recortarLetritas(letritas)
 
     #4 . creamos la matriz de datos (segun queramos)
-    datos = generacionDatos(letritas, letritasRecortadas, [True, True, True, True, True, True, True], 20, 20, 15)
+    datos = generacionDatos(letritas, letritasRecortadas, [True, True, True, True, True, True, True], 20, 20, 15) #Alto, Ancho, Relacion, Pixeles, CortesH, CortesV, Rejilla
 
     print("Media de aciertos de Naive Bayes")
     print(clasificaNaiveBayes(datos, divisionVC))
@@ -47,7 +47,7 @@ def main():
     #5. clasificamos
     #for i in range(5):
     #    nb = np.append(nb, clasificaNaiveBayes(datos, divisionVC))
-    #    knn = np.append(knn, clasificaKNN(datos, 5, divisionVC))
+    #   knn = np.append(knn, clasificaKNN(datos, 5, divisionVC))
     #    rl = np.append(rl, clasificaRegresionLogistica(datos, 750, divisionVC))
     #    rf = np.append(rf, clasificaRandomForest(datos, 500, 2, 1,divisionVC))
     #    rn = np.append(rn, clasificaRedNeuronal(datos, 750, divisionVC))
@@ -59,8 +59,6 @@ def main():
     #print("Media aciertos RF con 5 ejecuciones: ", (np.mean(rf)*100))
     #print("Media aciertos RN con 5 ejecuciones: ", (np.mean(rn)*100))
     #print("Media aciertos AD con 5 ejecuciones: ", (np.mean(ad)*100))
-
-
 
 if __name__ == '__main__':
 	main()
